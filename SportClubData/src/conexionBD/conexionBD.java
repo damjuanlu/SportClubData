@@ -7,15 +7,15 @@ import java.sql.Statement;
  
 public class conexionBD {
 
-    public Statement statement;
+    private Statement statement;
     String servidor = "";
-    public String usuario;
-    public String contraseña;
+    private String usuario;
+    private String contraseña;
     private static Connection conexion  = null;
  
     //CONSTRUCTOR
     //Recibe el nombre de la base de datos
-    conexionBD (String usuario, String contraseña){
+    public conexionBD (String usuario, String contraseña) throws SQLException{
     	
      	this.usuario=usuario;
     	this.contraseña=contraseña;
@@ -25,17 +25,14 @@ public class conexionBD {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             System.out.println("DRIVER REGISTRADO");
+            conexion = DriverManager.getConnection(this.servidor,
+                    this.usuario, this.contraseña);
+        System.out.println("CONECTADO A LA BASE DE DATOS");
         } catch (ClassNotFoundException e) {
             System.err.println("ERROR AL REGISTRAR EL DRIVER");
             System.exit(0); //parar la ejecución
-        }
- 
-        //Establecer la conexión con el servidor
-        try {
-            conexion = DriverManager.getConnection(this.servidor,
-                        this.usuario, this.contraseña);
-            System.out.println("CONECTADO A LA BASE DE DATOS");
         } catch (SQLException e) {
+        	System.out.println(e);
             System.err.println("ERROR AL CONECTAR CON EL SERVIDOR");
             System.exit(0); //parar la ejecución
         }
