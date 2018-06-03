@@ -42,7 +42,7 @@ public VistaLogin() {
 		int centroAncho = (ancho / 2) - 200;
 		int centroAlto = (alto / 2) - 110;
 
-        super.setBounds(centroAncho, centroAlto, 400, 250);
+        super.setBounds(centroAncho, centroAlto, 400, 350);
 		
 		panel = new JPanel();
 		panel.setLayout(null);
@@ -84,7 +84,7 @@ public VistaLogin() {
 		
 		btnLogin = new JButton("LOGIN");
 		btnLogin.setVisible(false);
-		btnLogin.setBounds(137, 228, 120, 23);
+		btnLogin.setBounds(134, 210, 120, 23);
 		panel.add(btnLogin);
 		btnLogin.setFont(new Font("Palatino Linotype", Font.BOLD, 11));
 		
@@ -93,8 +93,8 @@ public VistaLogin() {
 		txtPassword.setBounds(137, 177, 120, 20);
 		panel.add(txtPassword);
 		
-		JLabel lblVersion = new JLabel("0.9.4");
-		lblVersion.setBounds(10, 176, 24, 15);
+		JLabel lblVersion = new JLabel("Dise\u00F1ado por Juan Luis Mart\u00EDnez y Ra\u00FAl Ballesteros");
+		lblVersion.setBounds(10, 240, 259, 15);
 		panel.add(lblVersion);
 		lblVersion.setFont(new Font("Palatino Linotype", Font.PLAIN, 11));
 		lblVersion.setForeground(Color.BLACK);
@@ -115,9 +115,11 @@ public VistaLogin() {
 		panel.add(btnVolver);
 		
 		label = new JLabel("New label");
+		label.setIcon(new ImageIcon(VistaLogin.class.getResource("/Repositorios/1_Primary_logo_on_transparent_201x71.png")));
 		//label.setIcon(new ImageIcon(VistaLogin.class.getResource("/Repositorios/1_Primary_logo_on_transparent_201x71.png")));
 		label.setBounds(103, 40, 180, 72);
 		panel.add(label);
+		lblNewLabel.setIcon(new ImageIcon(VistaLogin.class.getResource("/Repositorios/fondo3.jpg")));
 		
 		//lblNewLabel.setIcon(new ImageIcon(VistaLogin.class.getResource("/Repositorios/fondo3.jpg")));
 		lblNewLabel.setBounds(-78, -27, 511, 330);
